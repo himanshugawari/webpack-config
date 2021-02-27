@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "name": "webpack-project",
+  "version": "1.0.0",
+  "description": "webpack babel eslint",
+  "scripts": {
+    "start": "webpack serve",
+    "watch": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/himanshugawari/webpack-config.git"
+  },
+  "keywords": [
+    "webpack",
+    "babel",
+    "eslint"
+  ],
+  "author": "Himanshu Gawari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/himanshugawari/webpack-config/issues"
+  },
+  "homepage": "https://github.com/himanshugawari/webpack-config#readme",
+  "dependencies": {
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
