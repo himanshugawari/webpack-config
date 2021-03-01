@@ -17,6 +17,9 @@ module.exports = (env) => {
         },
       ],
     },
+    resolve: {
+      extensions: ['.js', '.jsx'],
+    },
     devtool: 'source-map',
     devServer: {
       contentBase: './dist',
