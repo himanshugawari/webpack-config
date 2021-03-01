@@ -1,8 +1,9 @@
 module.exports = (env) => {
-  let mode = env.production ? 'production' : 'development';
-  console.log(mode);
+  let liveReolad = env.production
+    ? { mode: 'production', target: 'browserslist' }
+    : { mode: 'development', target: 'web' };
   return {
-    mode: mode,
+    ...liveReolad,
     module: {
       rules: [
         {
@@ -10,11 +11,16 @@ module.exports = (env) => {
           exclude: /node_modules/,
           use: ['babel-loader'],
         },
+        {
+          test: /\.css$/,
+          use: ['style-loader', 'css-loader'],
+        },
       ],
     },
     devtool: 'source-map',
     devServer: {
       contentBase: './dist',
+      hot: true,
     },
   };
 };

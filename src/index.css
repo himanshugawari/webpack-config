@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  background: peachpuff;
+  color: #222;
+  display: flex;
+}
+
+h1 {
+  font-size: 5rem;
+}

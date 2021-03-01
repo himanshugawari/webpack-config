@@ -1,3 +1,5 @@
+import './index.css';
+
 const Avengers = {
   ironman: 'tin can',
   captain: 'shield guy',
