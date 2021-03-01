@@ -15,8 +15,12 @@ const Avengers = () => {
   const [numberOfAvengers, setNumberOfAvengers] = useState({});
   return (
     <>
-      <button onClick={() => setNumberOfAvengers(team1)}>3 Avenger</button>
-      <button onClick={() => setNumberOfAvengers(team2)}>4 Avenger</button>
+      <button type='button' onClick={() => setNumberOfAvengers(team1)}>
+        3 Avenger
+      </button>
+      <button type='button' onClick={() => setNumberOfAvengers(team2)}>
+        4 Avenger
+      </button>
       {JSON.stringify(numberOfAvengers)}
     </>
   );

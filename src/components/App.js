@@ -1,19 +1,17 @@
 import Avengers from './Avengers';
 import '../index.css';
-import sword from '../images/sword.svg';
+import sword from '../images/sword-32x32.png';
 
-const App = () => {
-  return (
-    <>
-      <main>
-        <section>
-          <h1>Oh Hi, React</h1>
-        </section>
-        <img src={sword} alt='sword' width='250' />
-        <Avengers />
-      </main>
-    </>
-  );
-};
+const App = () => (
+  <>
+    <main>
+      <section>
+        <h1>Oh Hi, React</h1>
+      </section>
+      <img src={sword} alt='sword' width='250' />
+      <Avengers />
+    </main>
+  </>
+);
 
 export default App;

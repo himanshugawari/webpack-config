@@ -1,13 +1,30 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+const plugins = [
+  new CleanWebpackPlugin(),
+  new HtmlWebpackPlugin({
+    template: './src/index.html',
+  }),
+];
 
 module.exports = (env) => {
-  let liveReolad = env.production
-    ? { mode: 'production', target: 'browserslist' }
-    : { mode: 'development', target: 'web' };
+  const liveReolad = env.production
+    ? {
+        mode: 'production',
+        target: 'browserslist',
+        plugins: [...plugins, new BundleAnalyzerPlugin()],
+      }
+    : {
+        mode: 'development',
+        target: 'web',
+        plugins: [...plugins],
+      };
   return {
     ...liveReolad,
+    entry: path.resolve(__dirname, './src/index.js'),
     output: {
       path: path.resolve(__dirname, 'dist'),
       assetModuleFilename: 'images/[hash][ext][query]',
@@ -17,7 +34,7 @@ module.exports = (env) => {
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
-          use: ['babel-loader'],
+          use: ['babel-loader', 'eslint-loader'],
         },
         {
           test: /\.css$/,
@@ -29,12 +46,6 @@ module.exports = (env) => {
         },
       ],
     },
-    plugins: [
-      new CleanWebpackPlugin(),
-      new HtmlWebpackPlugin({
-        template: './src/index.html',
-      }),
-    ],
     resolve: {
       extensions: ['.js', '.jsx'],
     },
