@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack serve",
     "watch": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack --env production",
+    "build-dev": "webpack"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,11 @@
     "url": "https://github.com/himanshugawari/webpack-config/issues"
   },
   "homepage": "https://github.com/himanshugawari/webpack-config#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.8",
+    "babel-loader": "^8.2.2",
     "webpack": "^5.24.2",
     "webpack-cli": "^4.5.0",
     "webpack-dev-server": "^3.11.2"
